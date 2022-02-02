@@ -1,4 +1,4 @@
-/*let ingresoproductonuevos1: string = String(
+let ingresoproductonuevos1: string = String(
   prompt("ingreso de  producto nuevo 1")
 );
 let stockinicialdelosproductosnuevos1: number = Number(
@@ -72,52 +72,56 @@ console.log(
   `Los productos disponibles son ${productonuevo3}$  ${precioproductonuevo3} hay en stock ${stocknuevoproducto3}`
 );
 
-let compra:number=Number(prompt("Ingrese la cantidad de productos que va a comprar"));
+let compra: number = Number(
+  prompt("Ingrese la cantidad de productos que va a comprar")
+);
 
+while (compra <= 0) {
+  compra = prompt(
+    "Ingrese la cantidad de productos que va a comprar que sea mayor a 0"
+  );
+}
 
-while (compra<=0) {
-  let compradeunproducto: string = String(prompt("Que producto desea comprar"));
+let compradeunproducto: string = String(prompt("Que producto desea comprar"));
 let cantidadacomprar: number = Number(prompt("Cuantos desea comprar"));
 
-  let compradeproducto: string = "";
-  let cantidaddecompradeproducto: number = 0;
-  let totaldecompra: number = 0;
-  let stockdisponible: number = 0;
-  if (
-    compradeunproducto === productonuevo1 &&
-    cantidadacomprar <= stocknuevoproducto1
-  ) {
-    compradeproducto = compradeunproducto;
-    cantidaddecompradeproducto = cantidadacomprar;
-    totaldecompra = precioproductonuevo1 * cantidaddecompradeproducto;
-    stockdisponible = stocknuevoproducto1 - cantidaddecompradeproducto;
-    console.log(
-      `La compra que realizaste: ${compradeproducto} $ ${precioproductonuevo1}, la cantidad que compraste ${cantidaddecompradeproducto}, total a pagar ${totaldecompra} y el stock disponible es: ${stockdisponible}`
-    );
-  } else if (
-    compradeunproducto === productonuevo2 &&
-    cantidadacomprar <= stocknuevoproducto2
-  ) {
-    compradeproducto = compradeunproducto;
-    cantidaddecompradeproducto = cantidadacomprar;
-    totaldecompra = precioproductonuevo2 * cantidaddecompradeproducto;
-    stockdisponible = stocknuevoproducto2 - cantidaddecompradeproducto;
-    console.log(
-      `La compra que realizaste: ${compradeproducto} $ ${precioproductonuevo2}, la cantidad que compraste ${cantidaddecompradeproducto}, total a pagar ${totaldecompra} y el stock disponible es: ${stockdisponible}`
-    );
-  } else if (
-    compradeunproducto === productonuevo3 &&
-    cantidadacomprar <= stocknuevoproducto3
-  ) {
-    compradeproducto = compradeunproducto;
-    cantidaddecompradeproducto = cantidadacomprar;
-    totaldecompra = precioproductonuevo3 * cantidaddecompradeproducto;
-    stockdisponible = stocknuevoproducto3 - cantidaddecompradeproducto;
-    console.log(
-      `La compra que realizaste: ${compradeproducto} $ ${precioproductonuevo2}, la cantidad que compraste ${cantidaddecompradeproducto}, total a pagar ${totaldecompra} y el stock disponible es: ${stockdisponible}`
-    );
-  } else {
-    console.log("No hay stock del producto que desea comprar;");
-  }
- 
+let compradeproducto: string = "";
+let cantidaddecompradeproducto: number = 0;
+let totaldecompra: number = 0;
+let stockdisponible: number = 0;
+if (
+  compradeunproducto === productonuevo1 &&
+  cantidadacomprar <= stocknuevoproducto1
+) {
+  compradeproducto = compradeunproducto;
+  cantidaddecompradeproducto = cantidadacomprar;
+  totaldecompra = precioproductonuevo1 * cantidaddecompradeproducto;
+  stockdisponible = stocknuevoproducto1 - cantidaddecompradeproducto;
+  console.log(
+    `La compra que realizaste: ${compradeproducto} $ ${precioproductonuevo1}, la cantidad que compraste ${cantidaddecompradeproducto}, total a pagar ${totaldecompra} y el stock disponible es: ${stockdisponible}`
+  );
+} else if (
+  compradeunproducto === productonuevo2 &&
+  cantidadacomprar <= stocknuevoproducto2
+) {
+  compradeproducto = compradeunproducto;
+  cantidaddecompradeproducto = cantidadacomprar;
+  totaldecompra = precioproductonuevo2 * cantidaddecompradeproducto;
+  stockdisponible = stocknuevoproducto2 - cantidaddecompradeproducto;
+  console.log(
+    `La compra que realizaste: ${compradeproducto} $ ${precioproductonuevo2}, la cantidad que compraste ${cantidaddecompradeproducto}, total a pagar ${totaldecompra} y el stock disponible es: ${stockdisponible}`
+  );
+} else if (
+  compradeunproducto === productonuevo3 &&
+  cantidadacomprar <= stocknuevoproducto3
+) {
+  compradeproducto = compradeunproducto;
+  cantidaddecompradeproducto = cantidadacomprar;
+  totaldecompra = precioproductonuevo3 * cantidaddecompradeproducto;
+  stockdisponible = stocknuevoproducto3 - cantidaddecompradeproducto;
+  console.log(
+    `La compra que realizaste: ${compradeproducto} $ ${precioproductonuevo2}, la cantidad que compraste ${cantidaddecompradeproducto}, total a pagar ${totaldecompra} y el stock disponible es: ${stockdisponible}`
+  );
+} else {
+  console.log("No hay stock del producto que desea comprar;");
 }
